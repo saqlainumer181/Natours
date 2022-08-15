@@ -1,0 +1,122 @@
+.row{
+    max-width: $grid-width;
+    margin: 0 auto;
+    
+
+    &:not(:last-child){
+        margin-bottom: $gutter-vertical;
+        @include responsive(tab-port){
+            margin-bottom: $gutter-vertical-small;
+        }
+    }
+
+    @include responsive(tab-port){
+        max-width: 50rem;
+        padding: 0 3rem;
+    }
+
+
+
+
+    @include clearfix;
+
+    [class^="col-"]{
+        float: left;
+
+        &:not(:last-child){
+            margin-right: $gutter-horizontal;
+
+            
+            @include responsive(tab-port){
+                margin-right: 0;
+                margin-bottom: $gutter-vertical-small;
+                
+            }
+
+            @include responsive(tab-land){
+                margin-right: 3rem;
+            }
+
+        }
+
+        @include responsive(tab-port){
+            width: 100% !important;
+        }
+
+    }
+
+    .col-1-of-2{
+        width: calc((100% - #{ $gutter-horizontal}) / 2);
+       
+    }
+
+    .col-1-of-3{
+      
+        width: 30rem;
+
+        @include responsive(tab-land){
+            width: 27rem;
+
+        }
+   
+    }
+
+    .col-1-of-4{
+
+        width: calc((100% - 3 * #{$gutter-horizontal}) / 4);
+
+    }
+
+
+    
+}
+
+.section-features-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 5rem;
+    padding: 0 8rem;
+
+    @include responsive(tab-land){
+        gap: 2rem;
+        padding: 0 3rem;
+    }
+
+    @include responsive(tab-port){
+        grid-template-columns: auto;
+        gap: 3rem;
+        padding: 0 15rem;
+    }
+
+    @include responsive(phone){
+        grid-template-columns: auto;
+        padding: 0 10rem;
+    }
+}
+
+
+.section-tours-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8rem;
+    padding: 0 8rem;
+
+
+    @include responsive(tab-land){
+        gap: 4rem;
+        padding: 0 4rem;
+    }
+
+    @include responsive(tab-port){
+        grid-template-columns: auto;
+        padding: 0 20rem;
+       
+    }
+
+    @include responsive(phone){
+        grid-template-columns: auto;
+        padding: 0 8rem;
+
+    }
+
+}
